@@ -1,14 +1,10 @@
 import "./App.css";
 import { useState } from "react";
-import About from "./components/About";
+// import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Text from "./components/Text";
 import Alert from "./components/Alert";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,  
-} from "react-router-dom";
+
 
 
 function App() {
@@ -38,23 +34,14 @@ function App() {
   }
   return (
     <>
-    <Router>
       <Navbar title="Text Utils" aboutText="ABOUT" mode={Mode} toggleMode={toggleMode} />
-      
+
       <Alert alert={alert}/>
-      
+
       <div className="container my-3">
-        <Routes>
-          {/* Exact is used for exact matching, or else it always does partial matching, so 
-          it might not always give accurate Routes
-          eg:
-          /users/component1
-          /user/component2 */}
-          <Route exact path="/about" element={<About/>} />
-          <Route exact path="/" element={<Text heading="Enter the text to be analyzed" mode={Mode} showAlert={showAlert} />} />
-        </Routes>
-      </div> 
-      </Router>
+        <Text heading="Enter the text to be analyzed" mode={Mode} showAlert={showAlert} />
+      </div>
+
     </>
   );
 }
