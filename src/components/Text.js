@@ -3,18 +3,22 @@ import React, { useState } from "react";
 export default function Text(props) {
   const [text, setText] = useState("");
   const handleUpClick = () => {
-    console.log("Upper case is activated");
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Upper Case is activated","success");
   };
   const handleLowClick = () => {
     console.log("Lower case is activate");
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Lower Case is activated","success");
+
   };
   const handleClearClick = () => {
     console.log("Clear text is activate");
     setText("");
+    props.showAlert("Text box is epmtied","success");
+
   };
   const handleOnChange = (event) => {
     setText(event.target.value);
@@ -22,11 +26,15 @@ export default function Text(props) {
   const handleExtraSpace=() => {
     let newtext=text.split(/[ ]+/);
     setText(newtext.join(" "));
+    props.showAlert("Extra spacess are removed","success");
+
   }
   const handleCopy=() =>{
     var text=document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Text is copied in the clipboard","success");
+
   }
   return (
     <>
