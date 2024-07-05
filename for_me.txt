@@ -1,0 +1,21 @@
+React Router Dom
+
+General usage is to link one web page to another.
+
+To import
+            import {
+                BrowserRouter as Router,
+                Routes,
+                Route,  
+            } from "react-router-dom";
+
+Syntax for routing
+
+    <router>
+        <routes>
+            <route element={} />
+        </routes>
+    </router>
+
+Element carries the normal js page that we bring in
+                    element={<About/>}
