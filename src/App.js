@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
-  import Text from "./components/Text";
+import Text from "./components/Text";
 import Alert from "./components/Alert";
 function App() {
   const [Mode, setMode] = useState('light');
@@ -27,8 +27,6 @@ function App() {
       setMode("light");
       document.body.style.backgroundColor='white';
       showAlert("Light mode is enabled","success");
-
-
     }
   }
   return (
